@@ -4,6 +4,9 @@ use std::io;
 use std::cmp::Ordering;
 use rand::Rng;
 
+const RAND_MIN: u32 = 1;
+const RAND_MAX: u32 = 100;
+
 fn input(message: &'static str) -> String {
   println!("{}", message);
 
@@ -18,8 +21,7 @@ fn input(message: &'static str) -> String {
 
 fn main() {
   println!("Guess the number!");
-
-  let secret = rand::thread_rng().gen_range(1, 101);
+  let secret = rand::thread_rng().gen_range(RAND_MIN, RAND_MAX + 1);
 
   loop {
     let guess = input("Please Input Your Guess.");
