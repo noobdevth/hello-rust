@@ -8,10 +8,6 @@ use std::io;
 const DAYS: [&'static str; 7] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 fn main() {
-  println!("Hello, World.");
-
-  println!("{}", DAYS[0]);
-
   println!("Input a day (1 - 7)");
 
   let mut input = String::new();

@@ -5,3 +5,15 @@ authors = ["Phoomparin Mano <work@phoom.in.th>"]
 
 [dependencies]
 rand = "0.3.14"
+
+# [[bin]]
+# name = "days"
+# path = "src/days.rs"
+
+# [[bin]]
+# name = "guess"
+# path = "src/guess.rs"
+
+# [[bin]]
+# name = "temperature"
+# path = "src/temperature.rs"
