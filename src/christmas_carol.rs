@@ -16,22 +16,12 @@ const GIFTS: [&'static str; 12] = [
   "Nine Ladies Dancing",
   "Ten Lords-a-Leaping",
   "Eleven Pipers Piping",
-  "Twelve Drummers Drumming"
+  "Twelve Drummers Drumming",
 ];
 
 const DAYS: [&'static str; 12] = [
-  "First",
-  "Second",
-  "Third",
-  "Fourth",
-  "Fifth",
-  "Sixth",
-  "Seventh",
-  "Eighth",
-  "Ninth",
-  "Tenth",
-  "Eleventh",
-  "Twelveth"
+  "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth",
+  "Eleventh", "Twelveth",
 ];
 
 fn get_gifts(day: usize) -> String {
@@ -42,14 +32,17 @@ fn get_gifts(day: usize) -> String {
     return gift;
   }
 
-  let conjunction = if day == 2 {"and "} else {""};
+  let conjunction = if day == 2 { "and " } else { "" };
 
   String::from(gift + "\n" + conjunction + &get_gifts(day - 1))
 }
 
 fn main() {
   for day in 1..13 {
-    println!("On the {} day of Christmas my true love sent to me", DAYS[day - 1]);
+    println!(
+      "On the {} day of Christmas my true love sent to me",
+      DAYS[day - 1]
+    );
     println!("{}\n", get_gifts(day as usize));
   }
 }
