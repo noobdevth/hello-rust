@@ -60,7 +60,7 @@ impl Cash {
   }
 }
 
-impl ops::Add<Cash> for Cash {
+impl ops::Add for Cash {
   type Output = Cash;
 
   fn add(self, rhs: Cash) -> Cash {
@@ -71,10 +71,31 @@ impl ops::Add<Cash> for Cash {
   }
 }
 
-fn main() {
-  let my_cash = Cash::new(1.0, BTC);
-  let your_cash = Cash::new(30000.0, THB);
-  let total_cash = my_cash + your_cash;
 
-  println!("I have {}", total_cash.convert(USD));
+impl ops::Sub for Cash {
+  type Output = Cash;
+
+  fn sub(self, rhs: Cash) -> Cash {
+    Cash {
+      currency: self.currency.clone(),
+      amount: self.amount - rhs.convert(self.currency).amount,
+    }
+  }
+}
+
+fn main() {
+  let my_income = Cash::new(0.1, BTC);
+  let your_income = Cash::new(50000.0, THB);
+  let total_income = your_income + my_income;
+
+  let tv_price = Cash::new(1000.0, USD);
+  let pizza_price = Cash::new(700.0, THB);
+  let total_expense = tv_price + pizza_price;
+
+  let remaining_cash = total_income - total_expense;
+
+  println!(
+    "I have {} left in my bank account.",
+    remaining_cash.convert(USD)
+  );
 }
