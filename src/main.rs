@@ -1,22 +1,21 @@
 extern crate itertools;
 
 use itertools::Itertools;
-
 use std::fmt;
 
-#[derive(Debug, Clone)]
+#[derive(Debug)]
 struct Coord {
   x: u32,
   y: u32,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug)]
 struct Cell<T> {
   value: T,
   coords: Coord,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug)]
 struct Row<T> {
   id: u32,
   cells: Vec<Cell<T>>,
