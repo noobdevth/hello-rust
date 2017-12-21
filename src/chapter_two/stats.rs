@@ -24,12 +24,16 @@ fn main() {
   sorted_nums.sort();
 
   let middle_index = (length / 2.0).round() as usize - 1;
+
   let median = match sorted_nums.get(middle_index) {
     Some(num) => num,
-    None => panic!("Cannot locate the middle value..")
+    None => panic!("Cannot locate the middle value.."),
   };
 
-  println!("The median (middle value) is {} ({:?})", median, sorted_nums);
+  println!(
+    "The median (middle value) is {} ({:?})",
+    median, sorted_nums
+  );
 
   let mut occurs = HashMap::new();
 
@@ -46,7 +50,10 @@ fn main() {
       max_num = num;
       max_occur = occur;
     }
-  };
+  }
 
-  println!("The mode (most frequent) is {}, which occurs {} times", max_num, max_occur);
+  println!(
+    "The mode (most frequent) is {}, which occurs {} times",
+    max_num, max_occur
+  );
 }
