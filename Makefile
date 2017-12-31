@@ -1,7 +1,4 @@
-go: build run
-
-build:
-	cargo build
+all: run
 
 run:
-	target/debug/rust
+	cargo run
