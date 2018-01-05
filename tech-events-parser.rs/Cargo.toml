@@ -1,0 +1,7 @@
+[package]
+name = "tech-events-calendar-parser"
+version = "0.1.0"
+authors = ["Phoomparin Mano <work@phoom.in.th>"]
+
+[dependencies]
+pulldown-cmark = {version = "0.0.11", default-features = false}
